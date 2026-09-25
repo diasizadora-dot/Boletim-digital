@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-   <link rel="stylesheet" href="style.css">
-   <title>Boletim Digital</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boletim Digital</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+  </header>
+
+  <!-- CARDS DE RESUMO -->
+  <section class="cards" id="cards">
+    <!-- Os cards serão preenchidos pelo JavaScript -->
+  </section>
+
+  <!-- TABELA DE NOTAS -->
+  <section class="tabela-container">
+    <table class="boletim">
+      <thead>
+        <tr>
+          <th>Disciplina</th>
+          <th>1º Tri</th>
+          <th>2º Tri</th>
+          <th>3º Tri</th>
+          <th>Média</th>
+          <th>Faltas</th>
+          <th>Situação</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabela">
+        <!-- As linhas serão preenchidas pelo JavaScript -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>Projeto escolar — dados fictícios para demonstração.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
