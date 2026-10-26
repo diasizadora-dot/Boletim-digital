@@ -1,144 +1,290 @@
-/* ===== RESET BÁSICO ===== */
+/* Reseta margens padrão e define o tipo de fonte */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ===== CORPO DA PÁGINA ===== */
+/* Fundo geral escuro e estilos básicos */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #faf7fd; /* lilás bem suave */
-  color: #333;
-  padding: 20px;
-  line-height: 1.5;
+    background-color: #0f0f14;
+    color: #e0e0e0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-/* ===== CABEÇALHO ===== */
+/* Container centralizado limitando a largura */
+.container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Classe auxiliar para ocultar elementos */
+.escondido {
+    display: none !important;
+}
+
+/* Área de Login */
+.card-login {
+    background-color: #12121a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #a855f7;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    text-align: center;
+    max-width: 420px;
+    margin: 50px auto;
+}
+
+.card-login h2 {
+    color: #a855f7;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.info-estudante {
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.form-login {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.form-login input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #27272a;
+    background-color: #1a1a28;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    text-align: center;
+    width: 160px;
+}
+
+.form-login input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+/* Botões */
+.btn-acao {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-acao:hover {
+    background-color: #a855f7;
+    transform: translateY(-2px);
+}
+
+.painel-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Área de Edição */
+.card-edicao {
+    background-color: #12121a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #a855f7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    margin-bottom: 25px;
+}
+
+.card-edicao h3 {
+    color: #c084fc;
+    margin-bottom: 15px;
+}
+
+.tabela-edicao input {
+    width: 65px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #27272a;
+    background-color: #1a1a28;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tabela-edicao input.campo-invalido {
+    border-color: #f87171 !important;
+    background-color: rgba(248, 113, 113, 0.15) !important;
+}
+
+.botoes-edicao {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: flex-end;
+}
+
+.btn-salvar {
+    background-color: #22c55e;
+}
+
+.btn-salvar:hover {
+    background-color: #4ade80;
+}
+
+.btn-cancelar {
+    background-color: #4b5563;
+}
+
+.btn-cancelar:hover {
+    background-color: #6b7280;
+}
+
+.msg-status {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+.msg-erro {
+    color: #f87171;
+}
+
+.msg-sucesso {
+    color: #4ade80;
+}
+
+.msg-info {
+    color: #c084fc;
+}
+
+/* Cabeçalho estilizado com tom roxo */
 .cabecalho {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a24;
+    border-radius: 12px;
+    border: 2px solid #8a2be2;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
 }
 
 .cabecalho h1 {
-  color: #8e7cc3; /* roxo claro */
-  font-size: 2rem;
-  margin-bottom: 5px;
+    color: #a855f7;
+    font-size: 2rem;
+    margin-bottom: 5px;
 }
 
 .subtitulo {
-  color: #777;
-  font-size: 1rem;
+    color: #a1a1aa;
+    font-size: 1rem;
 }
 
-/* ===== CARDS DE RESUMO ===== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-bottom: 30px;
+/* Organização dos Cards de Resumo */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
+/* Estilo dos Cards com bordas arredondadas e detalhe roxo brilhante */
 .card {
-  background-color: #ffffff;
-  border: 1px solid #e0d7f0; /* borda lilás discreta */
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
+    background-color: #12121a;
+    padding: 18px;
+    border-radius: 12px;
+    /* Borda e sombra com roxo bem brilhante */
+    border: 2px solid #a855f7;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card .titulo-card {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
 }
 
-.card .valor-card {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #8e7cc3; /* roxo claro */
+.card h3 {
+    font-size: 0.9rem;
+    color: #c084fc;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-/* ===== TABELA ===== */
-.tabela-container {
-  overflow-x: auto; /* permite rolar no celular */
-  background-color: #ffffff;
-  border: 1px solid #e0d7f0;
-  border-radius: 8px;
+.valor-card {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-table.boletim {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px; /* garante que não fique espremida */
+.subtexto-card {
+    display: block;
+    font-size: 0.75rem;
+    color: #4ade80;
+    margin-top: 5px;
 }
 
-table.boletim th,
-table.boletim td {
-  padding: 10px 12px;
-  text-align: center;
-  border-bottom: 1px solid #f0ebf7;
-  font-size: 0.9rem;
+/* Seção e Tabela Responsiva */
+.tabela-secao {
+    background-color: #12121a;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #27272a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-table.boletim th {
-  background-color: #f3edfb; /* lilás mais clarinho */
-  color: #6b5b9a;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
+/* Permite rolagem lateral na tabela se a tela do celular for pequena */
+.tabela-wrapper {
+    overflow-x: auto;
 }
 
-table.boletim td:first-child,
-table.boletim th:first-child {
-  text-align: left;
+.tabela-boletim {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 650px;
 }
 
-/* Linhas zebradas para facilitar a leitura */
-table.boletim tbody tr:nth-child(even) {
-  background-color: #faf7fd;
+.tabela-boletim th, 
+.tabela-boletim td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #27272a;
 }
 
-/* Cores das situações */
+.tabela-boletim th {
+    background-color: #1e1e2d;
+    color: #c084fc;
+    font-weight: 600;
+}
+
+.tabela-boletim tbody tr:hover {
+    background-color: #1a1a28;
+}
+
+/* Estilos de destaques para situações */
 .situacao-bom {
-  color: #4caf50;
-  font-weight: bold;
+    color: #4ade80;
+    font-weight: bold;
 }
 
 .situacao-atencao {
-  color: #e67e22;
-  font-weight: bold;
+    color: #f87171;
+    font-weight: bold;
 }
 
 .situacao-indisponivel {
-  color: #999;
-  font-style: italic;
-}
-
-/* ===== RODAPÉ ===== */
-.rodape {
-  text-align: center;
-  margin-top: 30px;
-  color: #aaa;
-  font-size: 0.8rem;
-}
-
-/* ===== AJUSTES PARA CELULAR ===== */
-@media (max-width: 600px) {
-  .cabecalho h1 {
-    font-size: 1.5rem;
-  }
-
-  .card .valor-card {
-    font-size: 1.3rem;
-  }
-
-  table.boletim th,
-  table.boletim td {
-    padding: 8px;
-    font-size: 0.8rem;
-  }
+    color: #a1a1aa;
+    font-style: italic;
 }

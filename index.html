@@ -1,49 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boletim Digital</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <!-- Garante que o site fique responsivo no celular e computador -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim Digital - 8º Ano</title>
+    <!-- Link para o nosso arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
-  <header class="cabecalho">
-    <h1>Boletim Digital</h1>
-    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
-  </header>
+    <div class="container">
+        <!-- Área de Login por PIN -->
+        <section id="secao-login" class="card-login">
+            <h2>Acesso ao Boletim Digital</h2>
+            <p class="info-estudante">8º Ano | Turma 8C | Nº 37</p>
+            
+            <div class="form-login">
+                <input type="password" id="input-pin" placeholder="Digite seu PIN" maxlength="10">
+                <button id="btn-entrar" onclick="fazerLogin()">Entrar</button>
+            </div>
+            <p id="msg-login" class="msg-status"></p>
+        </section>
 
-  <!-- CARDS DE RESUMO -->
-  <section class="cards" id="cards">
-    <!-- Os cards serão preenchidos pelo JavaScript -->
-  </section>
+        <!-- Conteúdo do Boletim (Oculto até o login) -->
+        <div id="conteudo-boletim" class="escondido">
+            <!-- Cabeçalho principal do site -->
+            <header class="cabecalho">
+                <h1>Boletim Digital</h1>
+                <p class="subtitulo">8º Ano - Turma 8C - Chamada nº 37</p>
+            </header>
 
-  <!-- TABELA DE NOTAS -->
-  <section class="tabela-container">
-    <table class="boletim">
-      <thead>
-        <tr>
-          <th>Disciplina</th>
-          <th>1º Tri</th>
-          <th>2º Tri</th>
-          <th>3º Tri</th>
-          <th>Média</th>
-          <th>Faltas</th>
-          <th>Situação</th>
-        </tr>
-      </thead>
-      <tbody id="corpo-tabela">
-        <!-- As linhas serão preenchidas pelo JavaScript -->
-      </tbody>
-    </table>
-  </section>
+            <!-- Painel de Ações -->
+            <div class="painel-acoes">
+                <button id="btn-editar" class="btn-acao" onclick="abrirEdicao()">Alterar dados</button>
+            </div>
 
-  <!-- RODAPÉ -->
-  <footer class="rodape">
-    <p>Projeto escolar — dados fictícios para demonstração.</p>
-  </footer>
+            <!-- Área de Edição (Modal/Painel) -->
+            <section id="secao-edicao" class="card-edicao escondido">
+                <h3>Editar Notas e Faltas</h3>
+                <div id="msg-edicao" class="msg-status"></div>
+                <div class="tabela-wrapper">
+                    <table class="tabela-boletim tabela-edicao">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>1º Tri</th>
+                                <th>2º Tri</th>
+                                <th>3º Tri</th>
+                                <th>Faltas 1º Tri</th>
+                                <th>Faltas 2º Tri</th>
+                                <th>Faltas 3º Tri</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-edicao">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="botoes-edicao">
+                    <button class="btn-acao btn-salvar" onclick="salvarAlteracoes()">Salvar alterações</button>
+                    <button class="btn-acao btn-cancelar" onclick="fecharEdicao()">Cancelar</button>
+                </div>
+            </section>
 
-  <script src="script.js"></script>
+            <!-- Área superior com os cards de resumo -->
+            <section class="cards-container">
+                <div class="card">
+                    <h3>Média Geral</h3>
+                    <p id="card-media-geral" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Total de Faltas</h3>
+                    <p id="card-total-faltas" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Bom Desempenho</h3>
+                    <p id="card-bom-desempenho" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Atenção</h3>
+                    <p id="card-atencao" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Frequência</h3>
+                    <!-- Frequência demonstrativa fictícia -->
+                    <p id="card-frequencia" class="valor-card">92%</p>
+                    <span class="subtexto-card">Frequência adequada</span>
+                </div>
+            </section>
+
+            <!-- Seção da tabela de notas e faltas -->
+            <main class="tabela-secao">
+                <div class="tabela-wrapper">
+                    <table class="tabela-boletim">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>1º Tri</th>
+                                <th>2º Tri</th>
+                                <th>3º Tri</th>
+                                <th>Média</th>
+                                <th>Faltas</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+                        <!-- O corpo da tabela será preenchido dinamicamente pelo JavaScript -->
+                        <tbody id="corpo-tabela">
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Script principal de funcionamento -->
+    <script src="script.js"></script>
 </body>
 </html>
